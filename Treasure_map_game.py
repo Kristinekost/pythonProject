@@ -1,8 +1,9 @@
+import random
 row1 = ["🤡", "🤡", "🤡"]
 row2 = ["🤡", "🤡", "🤡"]
 row3 = ["🤡", "🤡", "🤡"]
 map = [row1, row2, row3]
-treasure = [1, 1]
+treasure = [random.randint(0, 2), random.randint(0, 2)]
 print(f"{row1}\n{row2}\n{row3}\n")
 is_win = False
 for any in range(4):
