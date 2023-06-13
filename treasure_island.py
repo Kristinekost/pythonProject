@@ -1,5 +1,5 @@
 print("Welcome to the treasure Island. Your mission is find the treasure")
-direction = input("You arrived at small creapy town called Saratov. Chose bus: 2д or 53? ")
+direction = input("You arrived at small creapy town called Saratov. Choose bus: 2д or 53? ")
 if direction == "53":
     weapon = input(
         "Looking through the window you are noticing how the beautiful and new apartments slowly turning into "
