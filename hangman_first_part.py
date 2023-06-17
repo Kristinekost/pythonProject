@@ -1,12 +1,81 @@
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 word_list = ["ardvark", "baabok", "camel"]
 chosen_word = random.choice(word_list)
+lives = 6
 print(f'Pssst, the solution is {chosen_word}.')
 display = []
 for i in chosen_word:
     display += "_"
-guess = input("Guess a letter: ").lower()
-for i in range(len(chosen_word)):
-    if guess == chosen_word[i]:
-        display[i] = guess
-print(display)
+end_of_game = False
+while not end_of_game:
+    guess = input("Guess a letter: ").lower()
+    if guess in chosen_word:
+        for i in range(len(chosen_word)):
+            if chosen_word[i] == guess:
+                display[i] = guess
+    else:
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print("You lose")
+    print(f"{' '.join(display)}")
+    if "_" not in display:
+        end_of_game = True
+        print("you won")
+    print(stages[lives])
