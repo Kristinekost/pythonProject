@@ -17,9 +17,8 @@ while not end_of_game:
         for i in range(len(chosen_word)):
             if chosen_word[i] == guess:
                 display[i] = guess
-    if guess not in chosen_word:
-        print(f"Your guessed {guess} is not in the word. You lose a life.")
     else:
+        print(f"Your guessed {guess} is not in the word. You lose a life.")
         lives -= 1
         if lives == 0:
             end_of_game = True
